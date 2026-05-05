@@ -4,18 +4,18 @@
 #
 # Usage: ./scripts/verify_citekeys.sh <persona-dir>
 #
-# Extracts all citekeys from <persona-dir>/velli.bib (or *.bib),
-# extracts all cited keys from **Citekeys**: lines in argument .md files,
-# and cross-references them. Reports:
-#   (a) citekeys in bib but never referenced
-#   (b) citekeys referenced but not in bib
+# Extracts all citekeys from <persona-dir>/<subject>.bib (the first *.bib
+# file found), extracts all cited keys from **Citekeys**: lines in argument
+# .md files, and cross-references them. Reports:
+#   (a) citekeys referenced but NOT in bib (orphans -- treated as failures)
+#   (b) bib entries that are never referenced (informational; run prune_bib.py)
 #
-# Exits with error code 1 if any broken citekeys or orphan bib entries
-# exist, 0 if perfect match.
+# Exits 1 only when orphan citekeys exist (broken references). Unreferenced
+# bib entries are reported but do not affect exit code.
 #
 # Works with the standard impersonate-meta persona layout:
 #   persona-dir/
-#     velli.bib              # BibTeX file
+#     <subject>.bib          # BibTeX file
 #     arguments/**/*.md      # VA argument files with **Citekeys**: lines
 #
 # The script handles mixed citekey formats:
