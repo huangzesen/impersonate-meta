@@ -426,12 +426,13 @@ count, token estimate) must be verified by a command, not by memory.
 **Problem:** The Velli persona was claimed to be "1.5M+ tokens" but
 measured at ~90K tokens. Inflated claims erode trust.
 
-**Solution:** Never state a token count unless you've measured it. Run:
+**Solution:** Never state a token count unless you've measured it. Run the
+shipped helper, which uses `words × 1.3` (a closer fit to GPT/Claude
+tokenizers for English prose than the older `bytes ÷ 4` heuristic):
 ```bash
-find . -type f \( -name '*.md' -o -name '*.bib' \) -exec wc -c {} + | tail -1
+./scripts/token_count.sh <persona-dir>
 ```
-For rough estimate: bytes ÷ 4 ≈ tokens for English text. For exact, use
-`tiktoken` or your LLM's tokenizer.
+For exact tokenization, use `tiktoken` or your target LLM's tokenizer.
 
 ### Anti-Pattern 3: Citation Discipline: Said vs Done
 
@@ -1032,10 +1033,7 @@ checkable by a command (grep, wc, ls) or explicit inspection.
 
 - [ ] SKILL.md version matches the file content
 - [ ] File count in SKILL.md matches actual: `find . -type f -name '*.md' | wc -l`
-- [ ] Token estimate is measured, not guessed:
-      ```
-      find . -type f \( -name '*.md' -o -name '*.bib' \) | xargs wc -c | tail -1
-      ```
+- [ ] Token estimate is measured, not guessed: `./scripts/token_count.sh .`
 - [ ] Loading table is current (no stale layer references)
 
 ### 7. Anti-Pattern Guard
@@ -1059,8 +1057,8 @@ find . -type f | sort
 # Total file count
 find . -type f | wc -l
 
-# Token estimate (bytes/4)
-find . -type f \( -name '*.md' -o -name '*.bib' \) -exec wc -c {} + | tail -1
+# Token estimate (words * 1.3 -- via shipped helper)
+./scripts/token_count.sh .
 
 # VA count
 grep -r '\*\*Claim ID\*\*' arguments/ | wc -l
