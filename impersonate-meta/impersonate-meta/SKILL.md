@@ -61,7 +61,7 @@ persona-<subject>/
 │   ├── methodology/               ← Thinking methods (8 VA)
 │   └── culture/                   ← Scientific culture (7 VA)
 └── methods/
-    └── SKILL.md                   ← Method cards (10 VM, cognative fingerprint)
+    └── SKILL.md                   ← Method cards (10 VM, cognitive fingerprint)
 ```
 
 ---
@@ -259,7 +259,7 @@ Each profile piece has its own rubric:
 - Students and postdocs (current group, notable alumni)
 - **Source rule:** Each relationship must cite a specific paper or source
 
-### Step 2.6: Build Method Cards as Cognative Fingerprint
+### Step 2.6: Build Method Cards as Cognitive Fingerprint
 
 Method cards are **not** a generic checklist. They emerge from **reverse
 induction** from the VA arguments. Each card answers: "What recurring method
@@ -348,7 +348,7 @@ when to load each layer:
 | `profile/relationships.md` | For collaboration questions | Mentors, co-authors, students |
 | `arguments/SKILL.md` | For domain questions | Argument index, search guide |
 | `arguments/<domain>/*.md` | For specific topics | Verifiable claims per domain |
-| `methods/SKILL.md` | For "how they think" | Cognative toolkit as method cards |
+| `methods/SKILL.md` | For "how they think" | Cognitive toolkit as method cards |
 ```
 
 **Authorship rule:** This table must be updated whenever the persona gains or
@@ -389,7 +389,7 @@ Biography / Voice / Values / Relationships — each with its own rubric
 person" answer. They are written to be loadable independently (each file
 self-contained) but cross-referenced.
 
-### Pattern 4: Method Cards as Cognative Fingerprint
+### Pattern 4: Method Cards as Cognitive Fingerprint
 
 10 method cards, each backed by ≥3 VA instances (§2.6). Cards emerge from
 reverse induction — you don't decide what methods the person has and then
