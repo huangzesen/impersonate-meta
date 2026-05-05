@@ -893,3 +893,66 @@ The goal of this research process is not to produce a biography. It is to produc
 Remember: You are not the person. But with enough signal extraction, you can become a faithful emanation — one that would make the original nod in recognition.
 
 **Good hunting.**
+
+---
+
+## 10. Special Case: Researching Ancient Historical Figures
+
+> *This section was developed during the Li Bai persona project. Ancient figures require a fundamentally different research strategy because the source hierarchy is inverted — the subject's own writings are both the primary evidence AND the voice model.*
+
+### Source Inventory for Ancient Figures
+
+| Where to look | What you find | Tools |
+|---------------|---------------|-------|
+| **Subject's complete works** | Primary voice, creative method, emotional register, life events | Digital libraries, academic editions, wikisource |
+| **Dynastic histories** | Official biography, career timeline, key events | Wikisource, CText.org, Perseus Digital Library |
+| **Contemporary prefaces/colophons** | First-hand accounts by people who knew the subject | Academic editions of collected works |
+| **Stele inscriptions/tomb epitaphs** | Biographical details, family background, death circumstances | Archaeological databases, local gazetteers |
+| **Later scholarly commentary** | Interpretation, dating, attribution debates | JSTOR, CNKI, Google Scholar |
+| **Complete works compilations** | Comprehensive corpus with annotations | Digitized critical editions |
+
+### Voice Reconstruction from Writings
+
+When the subject is a writer (poet, essayist, philosopher), their voice must be reconstructed from their works:
+
+1. **Identify the linguistic register** — Classical Chinese? Medieval Latin? Koine Greek? Elizabethan English? Document the grammar, vocabulary, and rhetorical patterns.
+2. **Build a metaphor inventory** — Extract characteristic images from the complete works, frequency-rank them. (Li Bai: moon, wine, sword, mountain, great Peng bird)
+3. **Map emotional expression** — How does the subject express joy? Sorrow? Anger? Map to specific works and life events.
+4. **Identify forbidden patterns** — What would this person NEVER say? What register, vocabulary, or attitude is antithetical to their voice?
+5. **Document literary allusions** — What works does the subject reference? What do they expect their reader to know?
+
+### The Works Chronology
+
+For creative figures, create a **works chronology** — equivalent to a bibliography for academics:
+
+- Map each major work to its life period
+- Note creation circumstances (where, when, for whom)
+- Identify connections between works (themes, imagery, evolution)
+- Group by thematic networks (e.g., for Li Bai: moon journey, wine journey, Peng bird journey, farewell journey, frustration journey)
+
+This chronology is the backbone of the persona — it connects the creative output to the life trajectory.
+
+### Research Workflow for Ancient Figures
+
+```
+Step 1: Acquire complete works in original language
+Step 2: Read dynastic histories / official biographies
+Step 3: Find contemporary accounts (prefaces, letters, epitaphs)
+Step 4: Build works chronology (map works → life periods)
+Step 5: Extract voice profile from works (metaphors, register, patterns)
+Step 6: Build VA arguments (life events, key works, philosophical positions)
+Step 7: Induce method cards from creative/strategic patterns
+Step 8: Assemble four-piece profile
+Step 9: [Optional but powerful] Spawn avatar dialogue
+```
+
+### Key Differences from Modern Research
+
+| Modern Research | Ancient Research |
+|----------------|-----------------|
+| Google Scholar for papers | Complete works compilations for poems/writings |
+| Video transcripts for voice | Subject's own writings for voice |
+| LinkedIn/CV for career | Dynastic histories for biography |
+| Interviews for values | Philosophical writings + letters for values |
+| Co-author network for relationships | Contemporary correspondence + dedications for relationships |
+| 100+ papers to decompose | 5-10 major works + complete works for context |

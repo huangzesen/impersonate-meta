@@ -159,3 +159,6 @@
 - [ ] All `[unverified]` markers are intentional and tracked
 - [ ] "No fabricated anecdotes" footer present
 - [ ] Cross-references to VA arguments added where relevant
+- [ ] [Ancient figures only] `outputs/` directory created with avatar dialogue outputs
+- [ ] [Ancient figures only] Works chronology created in `works/` directory
+- [ ] [Ancient figures only] Original-language source texts in `sources/` directory

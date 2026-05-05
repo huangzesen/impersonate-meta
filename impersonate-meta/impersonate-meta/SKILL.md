@@ -3,10 +3,11 @@ name: impersonate-meta
 description: >-
   Reusable methodology for deeply impersonating any academic or public figure
   via an agent network. Covers intelligence gathering, avatar orchestration,
-  skill production, integration, and persona assembly. v2 incorporates lessons
+  skill production, integration, and persona assembly. v3 incorporates lessons
   from the full Marco Velli case study (105 VA arguments, 10 VM method cards,
-  4-profile suit, 338-entry bib, ~90K tokens).
-version: 2.0
+  4-profile suit, 338-entry bib, ~90K tokens) AND the Li Bai ancient-historical
+  case (55 VA, 6 VM, avatar dialogue, ~120K tokens).
+version: 3.0
 ---
 
 # Impersonation Meta-Skill: Building a Deep Persona via Agent Network
@@ -590,11 +591,160 @@ knowledge and performance.
 |-------------|-----------|
 | **Business leader** | Replace Scholar with SEC filings, interviews, keynotes; skills: strategy, leadership style, market analysis, crisis management |
 | **Artist/writer** | Replace papers with works; skills: technique, themes, influences, critical reception, creative process |
-| **Historical figure** | Replace web with archival material; skills: historical context, key decisions, relationships, legacy |
+| **Historical figure** | See §Ancient Historical Figures below for full adapted pipeline |
 | **Engineer/builder** | Replace papers with projects/patents; skills: technical approach, design philosophy, problem-solving patterns, notable projects |
 
 Core loop is the same: **gather → decompose → specialize → integrate →
 assemble.**
+
+---
+
+## Ancient Historical Figures: The Full Adapted Pipeline
+
+> *This section was developed during the [Li Bai persona](https://github.com/huangzesen/li-bai-skill) project — a complete distillation of the 8th-century Chinese poet Li Bai (701–762) into a ~120K-token agent persona. The ancient-historical pipeline differs from the academic pipeline in source hierarchy, voice reconstruction, decomposition strategy, and a breakthrough technique: **avatar dialogue**.*
+
+### What Changes for Ancient Figures
+
+| Academic Pipeline | Ancient-Historical Pipeline | Why |
+|-------------------|-----------------------------|-----|
+| Google Scholar / ORCID | Dynastic histories, biographical stele inscriptions, contemporaries' prefaces | No modern bibliometric databases exist |
+| Video/audio transcripts | Subject's own works + contemporary descriptions of their speech | No recordings survive |
+| Paper → Skill Domain decomposition | Works → Life Period / Theme decomposition | Creative output maps to biography, not research fields |
+| BibTeX database | Source index with full original text | Limited, well-known sources; prioritize primary texts in original language |
+| Method cards from papers | Method cards from creative/strategic patterns | The "cognitive fingerprint" emerges from works, not publications |
+| Voice from lectures | Voice from writings + reconstructed literary register | Must capture historical language register |
+
+### Source Hierarchy for Ancient Figures
+
+| Tier | Source Type | Example (Li Bai) | Reliability |
+|------|------------|-------------------|-------------|
+| **T1: Subject's own works** | Poems, letters, inscriptions, autobiographical writings | ~1000 surviving poems, prefaces, letters | Highest — primary voice |
+| **T2: Contemporary accounts** | Biographies by people who knew the subject | 李阳冰《草堂集序》(762), 魏颢《李翰林集序》(761) | Very high — first-hand |
+| **T3: Official histories** | Dynastic histories compiled within 1-3 centuries | 《旧唐书》(945), 《新唐书》(1060) | High — official but second-hand |
+| **T4: Later scholarly analysis** | Historical research, annotated editions | Modern academic studies | Medium — interpretive |
+| **T5: Popular accounts** | Wikipedia, documentaries | Various online sources | Low — often contains errors |
+
+**Key principle:** For ancient figures, T1 sources (the subject's own writings) are both the primary evidence AND the voice model. An academic's voice comes from lectures; an ancient poet's voice comes from poems. The `profile/voice.md` file must be built primarily from the subject's own works.
+
+### The Avatar Dialogue Pattern (Breakthrough Technique)
+
+> *This was the single most effective technique in the Li Bai project, producing content that no single agent could have generated alone.*
+
+**What it is:** Spawn multiple avatars, each representing a different life period of the subject. Each avatar reads the complete persona skill (deep copy), then reflects in first person from their temporal perspective. Finally, integrate the reflections into a single cross-temporal dialogue.
+
+**Why it works:**
+- Each avatar **inhabits** a specific life stage — they don't summarize it, they *are* it
+- The reflections reveal tensions between life periods that a single chronological account misses
+- The dialogue format exposes the subject's internal contradictions and evolution
+- The output is written in the subject's own voice, not in biographer's voice
+
+**Procedure:**
+
+1. **Identify life periods** from the biography (typically 5-7 periods for a full life)
+2. **Spawn deep-copy avatars** — one per period, with `type='deep'` so they inherit the full persona skill
+3. **Give each avatar a structured brief:**
+   - "You are Li Bai at age 25, leaving Shu for the first time"
+   - Five specific questions to answer in first person
+   - "Read the li-bai skill and the poetry chronology before writing"
+   - "Send your reflection to the parent agent via email"
+4. **Collect reflections** — each avatar produces 2000-5000 words of first-person reflection
+5. **Integrate into dialogue** — weave the reflections into a dramatic structure where the avatars "talk" to each other across time
+6. **Add the dialogue to the persona** as a new output layer (e.g., `outputs/李白与自己的对话.md`)
+
+**Sample brief questions (adapted for any ancient figure):**
+
+| Question | Purpose |
+|----------|---------|
+| "What was your [first major decision] actually like?" | Recover subjective experience of known events |
+| "How do you see [later period] from where you stand now?" | Reveal cross-temporal perspective |
+| "What do you think [the subject's life ideal] really means?" | Test whether the ideal is genuine or performative |
+| "What would you say to [the subject at another age]?" | Generate inter-period dialogue |
+| "Looking back, how far has [the subject's central metaphor] actually gone?" | Track the evolution of core imagery |
+
+**Avatar count:** 5-7 is ideal. Fewer misses key transitions; more creates diminishing returns.
+
+**Critical:** Each avatar must write in the subject's own voice. The deep copy ensures they have the voice profile, but the brief must explicitly instruct: "Write as [subject] would write — use [their language register], [their characteristic imagery], [their rhetorical patterns]."
+
+### Works-Based Decomposition
+
+For creative figures (poets, painters, composers, writers), the decomposition follows **works**, not research themes:
+
+| Academic Decomposition | Creative Decomposition |
+|------------------------|----------------------|
+| Research themes → Skill domains | Life periods / thematic networks → Skill domains |
+| Paper citation counts | Work influence / fame ranking |
+| Methodology from publications | Method from creative patterns across works |
+| BibTeX database | Complete works index with annotations |
+
+**For Li Bai, the decomposition was:**
+
+| Domain | Content | VA Count |
+|--------|---------|----------|
+| Life periods (生平) | 7 periods from birth to death | 15 VA |
+| Major poems (诗歌) | 20 representative works with creation context | 20 VA |
+| Philosophical thought (思想) | Daoism, political ideals, freedom | 8 VA |
+| Key relationships (关系) | Du Fu, He Zhizhang, Meng Haoran, etc. | 12 VA |
+| Creative method (诗法) | 6 cognitive fingerprint cards | 6 VM |
+
+**The poetry chronology** (`works/诗歌年表.md`) served as the equivalent of a bibliography — mapping each major work to its life period, creation context, and connections to other works. This is the backbone of the persona.
+
+### Language Register Adaptation
+
+Ancient figures often have distinctive language registers that must be explicitly captured:
+
+| Register | What to capture | How |
+|----------|----------------|-----|
+| **Classical language** | Grammar patterns, vocabulary, rhetorical devices | Analyze subject's own writings for recurring patterns |
+| **Metaphor inventory** | Subject's characteristic images | Extract from complete works, frequency-rank |
+| **Emotional register** | How they express joy, anger, sorrow | Map to specific works and life events |
+| **Literary allusions** | What they reference, what they expect the reader to know | Catalog from works + contemporary context |
+| **Forbidden patterns** | Words/styles they would never use | Inverse of what they do use |
+
+### The Incarnation Output Layer
+
+When using the avatar dialogue pattern, add a new layer to the persona directory:
+
+```
+persona-<subject>/
+├── SKILL.md
+├── profile/
+├── arguments/
+├── methods/
+├── sources/              ← original texts in original language
+├── works/                ← complete works index, chronology
+└── outputs/              ← NEW: avatar dialogue outputs
+    ├── <period-1>-reflection.md
+    ├── <period-2>-reflection.md
+    ├── ...
+    └── <subject>-dialogue.md    ← integrated cross-temporal dialogue
+```
+
+The `outputs/` layer is NOT a replacement for the `profile/` layer. It is a supplement — the profile provides the facts, the outputs provide the subjective experience. A downstream agent reads the profile to know what happened, and the outputs to understand what it *felt like*.
+
+### Case Study: Li Bai Persona Stats
+
+| Layer | Files | Entries | Notes |
+|-------|-------|---------|-------|
+| `profile/` | 5 | Complete | biography(413 lines), voice(293 lines), values(337 lines), relationships |
+| `arguments/` | 3 dirs | 55 VA | 生平(15), 诗歌(20), 思想(8), 关系(12) |
+| `methods/` | 1 | 6 VM | Poetry creation cognitive fingerprint |
+| `sources/` | 5 | Full text | 旧唐书, 新唐书, 草堂集序, 新墓碑, 李翰林集序 |
+| `works/` | 2 | ~1100 poems + chronology | Complete works + 7-period poetry chronology |
+| `outputs/` | 8 | 7 reflections + 1 dialogue | 5 avatar periods × reflections + integrated dialogue |
+| **Total** | **24+** | **~120K tokens** | Built over 3 sessions with 5 avatar spawns |
+
+### Differences from Academic Pipeline Checklist
+
+When adapting for ancient/historical figures, replace these checklist items:
+
+| Academic Checklist Item | Ancient-Historical Replacement |
+|------------------------|-------------------------------|
+| "Every bib entry MUST be ADS-verified" | "Every source must be traceable to an original text" |
+| "No fabricated papers" | "No fabricated poems/letters/works — verify against complete works" |
+| "Voice from video transcripts" | "Voice from subject's own writings + contemporary descriptions" |
+| "Method cards from papers" | "Method cards from creative/strategic patterns across works" |
+| "Cross-validation via citekeys" | "Cross-validation via source index + work chronology" |
+| "Token count measured by tiktoken" | Same — but expect higher counts due to original-language source texts |
 
 ---
 
