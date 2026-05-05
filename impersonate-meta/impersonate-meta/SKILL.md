@@ -447,7 +447,8 @@ broken citekeys and `[unverified]` flags.
 **Verification script pattern:**
 ```bash
 # Extract all used citekeys
-grep -rhoP '(?<=\*\*Citekeys\*\*:)[^\n]*' arguments/**/*.md | \
+find arguments -name '*.md' ! -name 'SKILL.md' -print0 | \
+  xargs -0 grep -hoP '(?<=\*\*Citekeys\*\*:)[^\n]*' | \
   tr ',' '\n' | sed 's/^ *//' | sort -u > /tmp/used.txt
 
 # Extract all bib entries
@@ -957,7 +958,8 @@ When a topic appears in multiple skills:
 
 ### Step 1: Extract Used Citekeys
 ```bash
-grep -rhoP '(?<=\*\*Citekeys\*\*:)[^\n]*' arguments/**/*.md | \
+find arguments -name '*.md' ! -name 'SKILL.md' -print0 | \
+  xargs -0 grep -hoP '(?<=\*\*Citekeys\*\*:)[^\n]*' | \
   tr ',' '\n' | sed 's/^ *//' | sort -u > /tmp/used.txt
 ```
 
@@ -1000,7 +1002,7 @@ checkable by a command (grep, wc, ls) or explicit inspection.
 - [ ] Every VA has a unique ID (VA001, VA002, ...)
 - [ ] Every VA has at least one citekey
 - [ ] Every VA has `Context` and `Cross-refs` fields
-- [ ] Total VA count verified: `grep -c '\*\*Claim ID\*\*' arguments/**/*.md`
+- [ ] Total VA count verified: `find arguments -name '*.md' ! -name 'SKILL.md' -exec grep -c '\*\*Claim ID\*\*' {} +`
 - [ ] No VA has a placeholder citekey
 
 ### 3. Method Card Completeness
