@@ -1,0 +1,16 @@
+{
+  "id": "20260530050824a103d9bf30844f01",
+  "model": "glm-5.1",
+  "created": 1780088987,
+  "usage": {
+    "completion_tokens": 4434,
+    "completion_tokens_details": {
+      "reasoning_tokens": 1798
+    },
+    "prompt_tokens": 20305,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    },
+    "total_tokens": 24739
+  }
+}

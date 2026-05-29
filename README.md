@@ -162,3 +162,9 @@ MIT — free to use, modify, and distribute.
 
 - [Marco Velli persona](https://github.com/huangzesen/marco-velli) — The case study that produced this methodology
 - [LingTai](https://github.com/huangzesen/lingtai) — The multi-agent orchestration platform (TUI + portal)
+
+---
+
+## Examples
+
+- [`examples/chuanfei-writing/`](examples/chuanfei-writing/) — a target-specific manuscript-writing skill distilled from Chuanfei Dong MAVEN switchback draft samples using this methodology plus a Zhipu GLM review pass.
