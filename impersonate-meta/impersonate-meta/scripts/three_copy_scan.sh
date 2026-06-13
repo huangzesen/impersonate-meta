@@ -8,6 +8,10 @@
 # for a skill directory with the given name, and reports every location
 # where it exists.
 #
+# This applies to a LingTai-style runtime layout. If you are running
+# standalone-persona QA (no .library/ on disk), this script will report
+# "no library" and exit 0 -- it has nothing to drift-check.
+#
 # Exits with error (1) if more than one canonical location is found
 # (i.e. the same skill appears in multiple user-writeable locations),
 # exits 0 if 0 or exactly 1 location.
@@ -34,8 +38,10 @@ fi
 LIBRARY_DIR="$PERSONA_DIR/.library"
 
 if [ ! -d "$LIBRARY_DIR" ]; then
-    echo "ERROR: No .library/ directory found at: $LIBRARY_DIR"
-    exit 2
+    echo "ℹ️   No .library/ directory at $LIBRARY_DIR -- nothing to scan."
+    echo "    (This script targets the LingTai runtime layout. For"
+    echo "     standalone-persona QA, run verify_citekeys.sh instead.)"
+    exit 0
 fi
 
 echo "=== Three-Copy Scan ==="
